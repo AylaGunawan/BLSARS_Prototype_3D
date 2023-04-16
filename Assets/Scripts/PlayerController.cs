@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class FPSController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
 
@@ -25,10 +25,6 @@ public class FPSController : MonoBehaviour
     {
         // controller setup
         characterController = GetComponent<CharacterController>();
-
-        // cursor setup
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update()
@@ -68,5 +64,15 @@ public class FPSController : MonoBehaviour
 
         // apply direction
         characterController.Move(moveDirection * Time.deltaTime);
+    }
+
+    public void Enable()
+    {
+        canMove = true;
+    }
+
+    public void Disable()
+    {
+        canMove = false;
     }
 }
