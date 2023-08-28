@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// !!! DISUSED !!!
+
 public enum GameState
 {
     MAIN_MENU,
@@ -11,7 +13,7 @@ public enum GameState
     LEVEL_EVALUATION
 };
 
-public class GameManagerScript : MonoBehaviour
+public class DisusedScript : MonoBehaviour
 {
     [SerializeField] private GameState gameState;
     [SerializeField] private GameObject player;
