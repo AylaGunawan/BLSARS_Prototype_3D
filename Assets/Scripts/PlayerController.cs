@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         moveDirection = (forward * currentSpeedX) + (right * currentSpeedY);
 
         // handle jumping
-        //if (Input.GetKeyDown(KeyCode.Space) && canMove && characterController.isGrounded)
+        //if (canMove && characterController.isGrounded)
         //{
         //    moveDirection.y = jump;
         //} else
@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
         // handle gravity
         if (!characterController.isGrounded)
         {
+            moveDirection.y = currentDirectionY;
             moveDirection.y -= gravity * Time.deltaTime;
         }
 
