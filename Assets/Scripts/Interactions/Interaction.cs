@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public class Interaction : MonoBehaviour
 {
+    // variables that all Interactions share
     public string promptMessage;
+    public StageManagerScript stageManagerScript;
 
     // called by PlayerInteract
     public void BaseInteract()
@@ -12,9 +14,9 @@ public class Interactable : MonoBehaviour
         Interact();
     }
 
-    // template for subclass override
+    // template function for subclass override
     protected virtual void Interact()
     {
-
+        // do Interact stuff
     }
 }

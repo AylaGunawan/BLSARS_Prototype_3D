@@ -5,16 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Camera playerCamera;
+    public Camera playerCamera;
 
     [SerializeField] private float walkSpeed = 7f;
-
-    [SerializeField] private float jump = 7f; // ?
-    [SerializeField] private float gravity = 20f; // ?
-
+    [SerializeField] private float gravity = 20f;
     [SerializeField] private float lookSpeed = 2f;
     [SerializeField] private float lookXLimit = 75f;
-
     [SerializeField] private bool canMove = true;
 
     private CharacterController characterController;
