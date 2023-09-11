@@ -39,15 +39,6 @@ public class PlayerController : MonoBehaviour
         // handle direction
         moveDirection = (forward * currentSpeedX) + (right * currentSpeedY);
 
-        // handle jumping
-        //if (canMove && characterController.isGrounded)
-        //{
-        //    moveDirection.y = jump;
-        //} else
-        //{
-        //    moveDirection.y = currentDirectionY;
-        //}
-
         // handle gravity
         if (!characterController.isGrounded)
         {

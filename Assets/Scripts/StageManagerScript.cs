@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class StageManagerScript : MonoBehaviour
 {
-    public List<GameObject> gameObjects = new List<GameObject>();
+    public List<GameObject> interactionObjs = new List<GameObject>();
+    [SerializeField] private List<GameObject> evaluationObjs = new List<GameObject>();
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 

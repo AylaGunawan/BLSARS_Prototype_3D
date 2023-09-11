@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    // variables that all Interactions share
-    public string promptMessage;
-    public StageManagerScript stageManagerScript;
+    //public string promptMessage;
+
+    protected StageManagerScript stageManagerScript;
+    protected LayerMask layer;
+    protected string phase;
+
+    public void Awake()
+    {
+        stageManagerScript = GameObject.FindGameObjectWithTag("StageManager").GetComponent<StageManagerScript>();
+    }
 
     // called by PlayerInteract
     public void BaseInteract()
@@ -17,6 +24,6 @@ public class Interaction : MonoBehaviour
     // template function for subclass override
     protected virtual void Interact()
     {
-        // do Interact stuff
+
     }
 }
