@@ -28,7 +28,7 @@ public class DisusedScript : MonoBehaviour
     [SerializeField] private GameObject exitConfirmUI; // exit level from pause?
     [SerializeField] private GameObject evaluationUI;
 
-    private PlayerController playerController;
+    private PlayerControl playerController;
     private bool levelInProgress;
 
     // better way of instantiating once?
@@ -51,7 +51,7 @@ public class DisusedScript : MonoBehaviour
         mainMenuBool = true;
         gameState = GameState.MAIN_MENU;
 
-        playerController = player.GetComponent<PlayerController>();
+        playerController = player.GetComponent<PlayerControl>();
     }
 
     void Update()

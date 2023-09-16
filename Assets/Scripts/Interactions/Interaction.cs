@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    //public string promptMessage;
+    // public string promptMessage;
 
     protected StageManagerScript stageManagerScript;
-    protected LayerMask layer;
-    protected string phase;
 
     public void Awake()
     {
         stageManagerScript = GameObject.FindGameObjectWithTag("StageManager").GetComponent<StageManagerScript>();
     }
 
-    // called by PlayerInteract
-    public void BaseInteract()
+    public void BaseInteract() // called by PlayerInteract
     {
         Interact();
     }
 
-    // template function for subclass override
-    protected virtual void Interact()
+    protected virtual void Interact() // overriden by child class
     {
 
     }

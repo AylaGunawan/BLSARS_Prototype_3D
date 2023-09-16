@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarInteraction : Interaction
+public class MouthInteraction : Interaction
 {
     void Start()
     {
-        // position car
+        // 
     }
 
     void Update()
     {
-        // move car
+        //
     }
 
     protected override void Interact()
@@ -20,5 +20,7 @@ public class CarInteraction : Interaction
 
         stageManagerScript.interactionObjects.Add(gameObject);
         gameObject.SetActive(false);
+
+        // open mouth
     }
 }

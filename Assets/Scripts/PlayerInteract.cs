@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
 {
     //[SerializeField] private TMP_Text promptText;
     [SerializeField] private Image interactBar;
-    [SerializeField] private float distance = 3f; // different phases, different distances?
+    [SerializeField] private float distance = 5f;
 
     private Camera playerCamera;
     private float interactTimer = 0f;
@@ -17,23 +17,25 @@ public class PlayerInteract : MonoBehaviour
 
     void Start()
     {
-        playerCamera = GetComponent<PlayerController>().playerCamera;
+        playerCamera = GetComponent<PlayerControl>().playerCamera;
     }
 
     void Update()
     {
         //promptText.text = string.Empty;
 
+        // set up raycast
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
         RaycastHit hit;
 
+        // handle raycast
         if (Physics.Raycast(ray, out hit, distance))
         {
             if (hit.collider.TryGetComponent<Interaction>(out Interaction interaction))
             {
                 //promptText.text = interaction.promptMessage;
-                // highlight collider
 
+                // handle interact
                 if (Input.GetKey(KeyCode.Space))
                 {
                     isInteracting = true;
