@@ -25,6 +25,12 @@ public class StageManagerScript : MonoBehaviour
     // check if list order equal
     // then check smaller sublists (2 dangers, order not impo)
 
+    // keyword recog for response
+    // ai waypoints for car (engine audio source, wheel animation clip)
+    // animator fsm for victim
+    // camera cutscene transition for cpr (minigame)
+    // countdown timer for stage manager
+
     void Start()
     {
         

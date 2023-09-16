@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 25182204}
   - component: {fileID: 25182205}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ResponseCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 171155308}
   - component: {fileID: 171155310}
   - component: {fileID: 171155309}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: MouthCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,8 +397,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -415,8 +415,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 652398582}
   - component: {fileID: 652398581}
   - component: {fileID: 652398583}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Victim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1017,8 +1017,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1841406404}
+  - component: {fileID: 1841406405}
   - component: {fileID: 1841406403}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: VictimPhone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,14 +1047,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841406402}
   m_LocalRotation: {x: -0.6788907, y: -0.1977561, z: -0.19775605, w: 0.6788907}
-  m_LocalPosition: {x: -2.918, y: -8.623, z: -13.218}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -2.918, y: -8.621, z: -13.218}
+  m_LocalScale: {x: 1.212794, y: 1.212794, z: 1.212794}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2091621866}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -32.481}
+--- !u!64 &1841406405
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841406402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 53ee823ff543aa24d855d8f9f8c2b87b, type: 3}
 --- !u!1 &1894229146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1080,7 @@ GameObject:
   - component: {fileID: 1894229147}
   - component: {fileID: 1894229149}
   - component: {fileID: 1894229148}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: CPRCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1218,7 +1233,7 @@ GameObject:
   - component: {fileID: 2000772400}
   - component: {fileID: 2000772399}
   - component: {fileID: 2000772398}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1281,7 +1296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 463835053371953216, guid: 9c993bdd1f0fb3e4da5b61dabec5fbb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 463835053371953216, guid: 9c993bdd1f0fb3e4da5b61dabec5fbb3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1289,7 +1304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 463835053371953216, guid: 9c993bdd1f0fb3e4da5b61dabec5fbb3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.004
       objectReference: {fileID: 0}
     - target: {fileID: 463835053371953216, guid: 9c993bdd1f0fb3e4da5b61dabec5fbb3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4055,7 +4070,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 5897003422531651257}
-  walkSpeed: 7
+  normalSpeed: 3
+  crouchSpeed: 1
+  normalHeight: 2
+  crouchHeight: 0.5
   gravity: 20
   lookSpeed: 2
   lookXLimit: 75
@@ -4073,7 +4091,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 3
+  m_SlopeLimit: 5
   m_StepOffset: 0.3
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
@@ -4090,8 +4108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98570e16df88349c595980777a5cebad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeholderText: {fileID: 0}
+  placeholderText: {fileID: 196704850}
   interactBar: {fileID: 271806824}
+  mask:
+    serializedVersion: 2
+    m_Bits: 8192
   distance: 3
 --- !u!136 &5897003421414701696
 CapsuleCollider:

@@ -8,15 +8,20 @@ public class PlayerControl : MonoBehaviour
 {
     public Camera playerCamera;
 
-    [SerializeField] private float walkSpeed = 7f;
+    [SerializeField] private float normalSpeed = 3f;
+    [SerializeField] private float crouchSpeed = 1f;
+    [SerializeField] private float normalHeight = 2f;
+    [SerializeField] private float crouchHeight = 0.5f;
     [SerializeField] private float gravity = 20f;
-    [SerializeField] private float lookSpeed = 2f;
+    [SerializeField] private float lookSpeed = 3f;
     [SerializeField] private float lookXLimit = 75f;
     [SerializeField] private bool canMove = true;
 
     private CharacterController characterController;
     private Vector3 moveDirection = Vector3.zero;
+    private float walkSpeed = 3f;
     private float rotationX = 0;
+    private bool isCrouching = false;
 
     void Start()
     {
@@ -45,6 +50,23 @@ public class PlayerControl : MonoBehaviour
         {
             moveDirection.y = currentDirectionY;
             moveDirection.y -= gravity * Time.deltaTime;
+        }
+
+        // handle crouching
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isCrouching = !isCrouching;
+        }
+
+        if (isCrouching)
+        {
+            characterController.height = crouchHeight;
+            walkSpeed = crouchSpeed;
+        }
+        else
+        {
+            characterController.height = normalHeight;
+            walkSpeed = normalSpeed;
         }
 
         // handle camera

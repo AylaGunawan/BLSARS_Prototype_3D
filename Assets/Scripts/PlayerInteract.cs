@@ -8,6 +8,7 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private TMP_Text placeholderText;
     [SerializeField] private Image interactBar;
+    [SerializeField] private LayerMask mask;
     [SerializeField] private float distance = 5f;
 
     private Camera playerCamera;
@@ -29,10 +30,9 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit;
 
         // handle raycast
-        if (Physics.Raycast(ray, out hit, distance))
+        if (Physics.Raycast(ray, out hit, distance, mask))
         {
-            Debug.Log(hit.collider.name);
-
+            // handle collision with interaction
             if (hit.collider.TryGetComponent<Interaction>(out Interaction interaction))
             {
                 placeholderText.text = interaction.placeholderMessage;
