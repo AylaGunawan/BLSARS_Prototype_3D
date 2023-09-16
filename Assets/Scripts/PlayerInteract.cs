@@ -31,6 +31,8 @@ public class PlayerInteract : MonoBehaviour
         // handle raycast
         if (Physics.Raycast(ray, out hit, distance))
         {
+            Debug.Log(hit.collider.name);
+
             if (hit.collider.TryGetComponent<Interaction>(out Interaction interaction))
             {
                 //promptText.text = interaction.promptMessage;
