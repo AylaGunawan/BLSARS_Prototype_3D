@@ -21,6 +21,10 @@ public class StageManagerScript : MonoBehaviour
     private Phase currentPhase = Phase.Danger;
     private Phase lastPhase = Phase.Danger;
 
+    // check if list length equal
+    // check if list order equal
+    // then check smaller sublists (2 dangers, order not impo)
+
     void Start()
     {
         
