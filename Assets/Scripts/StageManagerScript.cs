@@ -9,6 +9,7 @@ public class StageManagerScript : MonoBehaviour
     public List<GameObject> interactionObjects = new List<GameObject>();
 
     [SerializeField] private List<GameObject> evaluationObjects = new List<GameObject>();
+    [SerializeField] private float startTime = 300;
 
     private List<GameObject> dangerObjects = new List<GameObject>();
     private List<GameObject> responseObjects = new List<GameObject>();
@@ -21,6 +22,9 @@ public class StageManagerScript : MonoBehaviour
     private Phase currentPhase = Phase.Danger;
     private Phase lastPhase = Phase.Danger;
 
+    private float timeLeft; // 5 minutes in seconds?
+    private bool isRunning;
+
     // check if list length equal
     // check if list order equal
     // then check smaller sublists (2 dangers, order not impo)
@@ -28,15 +32,36 @@ public class StageManagerScript : MonoBehaviour
     // keyword recog for response
     // animator fsm for victim
     // camera cutscene transition for cpr (minigame)
-    // countdown timer for stage manager
+
+    // if player interacts with an object of the next phase, the phase changes to match.
+    // if player interacts with all required objects of a phase, the phase changes.
+    // then can the player interact with objects of previous phases?
 
     void Start()
     {
-        
+        timeLeft = startTime;
+        isRunning = true;
     }
 
     void Update()
     {
+        // handle countdown (change to timer?)
+        if (isRunning)
+        {
+            if (timeLeft > 0)
+            {
+                timeLeft -= Time.deltaTime;
+            }
+            else
+            {
+                timeLeft = 0;
+                isRunning = false;
+                // force evaluate
+            }
+        }
+        Debug.Log(timeLeft);
+
+        // debug evaluate
         if (Input.GetKeyDown(KeyCode.E))
         {
             Evaluate();
@@ -45,6 +70,7 @@ public class StageManagerScript : MonoBehaviour
 
     private void Evaluate()
     {
+        // FIX
         LayerMask layer;
         foreach (GameObject obj in interactionObjects)
         {
@@ -86,7 +112,7 @@ public class StageManagerScript : MonoBehaviour
         return currentPhase;
     }
 
-    public void ChangePhase() // if player interacts with an object of the next phase, the phase changes to match. if player interacts with all required objects of a phase, the phase changes. then can the player with objects of previous phases? furthermore, they can 
+    public void ChangePhase()
     {
         if (currentPhase != Phase.Defib)
         {
