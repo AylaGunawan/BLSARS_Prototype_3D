@@ -8,10 +8,10 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private TMP_Text placeholderText;
     [SerializeField] private Image interactBar;
-    [SerializeField] private LayerMask mask;
     [SerializeField] private float distance = 5f;
 
     private Camera playerCamera;
+    private LayerMask interactionMasks;
     private float interactTimer = 0f;
     private float interactTime = 1f;
     private bool isInteracting = false;
@@ -19,6 +19,7 @@ public class PlayerInteract : MonoBehaviour
     void Start()
     {
         playerCamera = GetComponent<PlayerControl>().playerCamera;
+        interactionMasks = LayerMask.GetMask("Danger", "Response", "Send_Help", "Airway", "Breathing", "CPR", "Defib");
     }
 
     void Update()
@@ -30,7 +31,7 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hit;
 
         // handle raycast
-        if (Physics.Raycast(ray, out hit, distance, mask))
+        if (Physics.Raycast(ray, out hit, distance, interactionMasks))
         {
             // handle collision with interaction
             if (hit.collider.TryGetComponent<Interaction>(out Interaction interaction))

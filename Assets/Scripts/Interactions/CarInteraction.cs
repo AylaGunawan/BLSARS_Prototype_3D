@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class CarInteraction : Interaction
 {
     [SerializeField] private GameObject[] waypoints;
-    [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private float rotateSpeed = 10f;
+    [SerializeField] private float moveSpeed = 20f;
+    [SerializeField] private float rotateSpeed = 5f;
     [SerializeField] private float minDistance = 1f;
 
     private int currentWaypoint = 0;
@@ -22,7 +22,6 @@ public class CarInteraction : Interaction
         // handle current waypoint
         if (Vector3.Distance(this.transform.position, waypoints[currentWaypoint].transform.position) < minDistance) {
             currentWaypoint++;
-            Debug.Log(currentWaypoint);
         }
 
         if (currentWaypoint >= waypoints.Length)
