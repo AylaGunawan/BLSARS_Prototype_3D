@@ -105,26 +105,28 @@ public class StageManagerScript : MonoBehaviour
         {
             GameObject clone = Instantiate(evaluationPrefab, evaluationParent.transform);
             Color cloneColor;
+            string evaluateText = "";
+            bool isMissing = false;
 
             // item in interactions is correct and in order
             if (paddedInteractionObjects[i] == paddedEvaluationObjects[i])
             {
                 cloneColor = Color.green;
-                clone.gameObject.GetComponentInChildren<TMP_Text>().text = LayerMask.LayerToName(paddedInteractionObjects[i].gameObject.layer) + ": " + paddedInteractionObjects[i].gameObject.GetComponent<Interaction>().evaluateMessage;
+                evaluateText = "";
             }
             // if the item in interactions is incorrect (not in evaluation) and not a placeholder
             else if (!paddedEvaluationObjects.Contains(paddedInteractionObjects[i]) && paddedInteractionObjects[i].name != PLACEHOLDER_NAME)
             {
                 cloneColor = Color.red;
-                clone.gameObject.GetComponentInChildren<TMP_Text>().text = LayerMask.LayerToName(paddedInteractionObjects[i].gameObject.layer) + ": " + paddedInteractionObjects[i].gameObject.GetComponent<Interaction>().evaluateMessage + "\nIncorrect interaction";
+                evaluateText = "\nIncorrect interaction";
             }
             // if the item in interactions is correct but not in order (does not include phase order)
             else if (paddedInteractionObjects.Contains(paddedEvaluationObjects[i])) {
                 cloneColor = Color.yellow;
-                clone.gameObject.GetComponentInChildren<TMP_Text>().text = LayerMask.LayerToName(paddedInteractionObjects[i].gameObject.layer) + ": " + paddedInteractionObjects[i].gameObject.GetComponent<Interaction>().evaluateMessage + "\nIncorrect order";
+                evaluateText = "\nIncorrect order";
             }
             // if the item in evaluations is not a placeholder
-            else if (paddedEvaluationObjects[i].name == "placeholder")
+            else if (paddedEvaluationObjects[i].name == PLACEHOLDER_NAME)
             {
                 continue;
             }
@@ -132,10 +134,18 @@ public class StageManagerScript : MonoBehaviour
             else
             {
                 cloneColor = Color.grey;
-                clone.gameObject.GetComponentInChildren<TMP_Text>().text = LayerMask.LayerToName(paddedEvaluationObjects[i].gameObject.layer) + ": " + paddedEvaluationObjects[i].gameObject.GetComponent<Interaction>().evaluateMessage + "\nMissing interaction";
+                isMissing = true;
             }
 
             clone.gameObject.GetComponentInChildren<Image>().color = cloneColor;
+            if (isMissing)
+            {
+                clone.gameObject.GetComponentInChildren<TMP_Text>().text = LayerMask.LayerToName(paddedEvaluationObjects[i].gameObject.layer) + ": " + paddedEvaluationObjects[i].gameObject.GetComponent<Interaction>().evaluateMessage + "\nMissing interaction";
+            }
+            else
+            {
+                clone.gameObject.GetComponentInChildren<TMP_Text>().text = LayerMask.LayerToName(paddedInteractionObjects[i].gameObject.layer) + ": " + paddedInteractionObjects[i].gameObject.GetComponent<Interaction>().evaluateMessage + evaluateText;
+            }
         }
     }
 
