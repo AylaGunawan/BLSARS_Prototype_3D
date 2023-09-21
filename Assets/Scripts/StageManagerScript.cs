@@ -8,6 +8,7 @@ public class StageManagerScript : MonoBehaviour
     public List<GameObject> interactionObjects = new List<GameObject>();
 
     [SerializeField] private List<GameObject> evaluationObjects = new List<GameObject>();
+    [SerializeField] private GameObject evaluationUI;
     [SerializeField] private GameObject evaluationPrefab;
     [SerializeField] private GameObject evaluationParent;
 
@@ -25,6 +26,7 @@ public class StageManagerScript : MonoBehaviour
     void Start()
     {
         isRunning = true;
+        evaluationUI.SetActive(false);
     }
 
     void Update()
@@ -45,8 +47,11 @@ public class StageManagerScript : MonoBehaviour
         }
     }
 
-    private void Evaluate()
+    public void Evaluate()
     {
+        // unhide evaluation ui
+        evaluationUI.SetActive(true);
+
         // add placeholders until the number of items in a phase is equal between interaction and evaluation
         while (evaluationObjects.Count > interactionObjects.Count)
         {

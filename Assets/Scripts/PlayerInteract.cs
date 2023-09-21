@@ -36,7 +36,7 @@ public class PlayerInteract : MonoBehaviour
             // handle collision with interaction
             if (hit.collider.TryGetComponent<Interaction>(out Interaction interaction))
             {
-                placeholderText.text = interaction.placeholderMessage;
+                placeholderText.text = interaction.interactMessage;
 
                 // handle interact
                 if (Input.GetKey(KeyCode.Space))
