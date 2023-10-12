@@ -34,25 +34,25 @@ public class ResponseManagerScript : MonoBehaviour
         if (inResponseRange)
         {
             // handle key presses
-            if (responseODone = false && (Input.GetKeyDown(KeyCode.Alpha1))) // O
+            if (Input.GetKeyDown(KeyCode.Alpha1)) // O
             {
                 stageManagerScript.interactionObjects.Add(responseO.gameObject);
                 responseO.gameObject.SetActive(false);
                 responseODone = true;
             }
-            if (responseSDone = false && (Input.GetKeyDown(KeyCode.Alpha2))) // S
+            if (Input.GetKeyDown(KeyCode.Alpha2)) // S
             {
                 stageManagerScript.interactionObjects.Add(responseS.gameObject);
                 responseS.gameObject.SetActive(false);
                 responseSDone = true;
             }
-            if (responseWDone = false && (Input.GetKeyDown(KeyCode.Alpha3))) // W
+            if (Input.GetKeyDown(KeyCode.Alpha3)) // W
             {
                 stageManagerScript.interactionObjects.Add(responseW.gameObject);
                 responseW.gameObject.SetActive(false);
                 responseWDone = true;
             }
-            if (responseCDone = false && (Input.GetKeyDown(KeyCode.Alpha4))) // C
+            if (Input.GetKeyDown(KeyCode.Alpha4)) // C
             {
                 stageManagerScript.interactionObjects.Add(responseC.gameObject);
                 responseC.gameObject.SetActive(false);
