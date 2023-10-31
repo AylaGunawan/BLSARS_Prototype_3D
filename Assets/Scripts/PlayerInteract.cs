@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
-    [SerializeField] private TMP_Text placeholderText;
+    [SerializeField] private TMP_Text interactText;
     [SerializeField] private Image interactBar;
     [SerializeField] private float distance = 5f;
 
@@ -24,7 +24,7 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        placeholderText.text = string.Empty;
+        interactText.text = string.Empty;
 
         // set up raycast
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
@@ -36,7 +36,7 @@ public class PlayerInteract : MonoBehaviour
             // handle collision with interaction
             if (hit.collider.TryGetComponent<Interaction>(out Interaction interaction))
             {
-                placeholderText.text = interaction.placeholderMessage;
+                interactText.text = interaction.interactMessage;
 
                 // handle interact
                 if (Input.GetKey(KeyCode.Space))

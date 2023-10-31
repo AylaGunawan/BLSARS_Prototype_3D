@@ -21,6 +21,6 @@ public class VictimPhoneInteraction : Interaction
         stageManagerScript.interactionObjects.Add(gameObject);
         gameObject.SetActive(false);
 
-        // pick up phone
+        // call phone
     }
 }

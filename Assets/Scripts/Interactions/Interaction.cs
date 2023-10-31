@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-     public string placeholderMessage;
+    public string interactMessage;
+    public string evaluateMessage;
 
     protected StageManagerScript stageManagerScript;
 
